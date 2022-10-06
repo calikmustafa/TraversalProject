@@ -1,0 +1,34 @@
+﻿
+@model UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Profil Düzenleme Sayfası</h1>
+<form method="post" enctype="multipart/form-data">
+    @Html.LabelFor(m=>m.Name)
+    @Html.TextBoxFor(m=>m.Name,"",new{@class="form-control"})
+    <br />
+     @Html.LabelFor(m=>m.Surname)
+    @Html.TextBoxFor(m=>m.Surname,"",new{@class="form-control"})
+    <br />
+    @Html.LabelFor(m=>m.Mail)
+    @Html.TextBoxFor(m=>m.Mail,"",new{@class="form-control"})
+    <br />
+    @Html.LabelFor(m=>m.Password)
+    @Html.TextBoxFor(m=>m.Password,"",new{@class="form-control"})
+    <br />
+    @Html.LabelFor(m=>m.ConfirmPassword)
+    @Html.TextBoxFor(m=>m.ConfirmPassword,"",new{@class="form-control"})
+    <br />
+    @Html.LabelFor(m=>m.PhoneNumber)
+    @Html.TextBoxFor(m=>m.PhoneNumber,"",new{@class="form-control"})
+    <br />
+    <div class="form-group">
+        @Html.Label("Resim Seçin")
+        <input type="file" asp-for="Image" />
+    </div>
+    <br />
+    <button class="btn btn-primary">Bilgileri Güncelle</button>
+</form>
